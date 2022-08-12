@@ -36,6 +36,12 @@ namespace BlackJack.Modelo
         public Valores Valor { get; }
         public Pintas Pinta { get; }
 
+        private bool _oculta;
+
+        public bool EstaOculta
+        {
+            get { return _oculta; }
+        }
 
         public Carta(Valores valor, Pintas pinta)
         {
@@ -43,9 +49,22 @@ namespace BlackJack.Modelo
             Pinta = pinta;
         }
 
+        public void Ocultar()
+        {
+            _oculta = true;
+        }
+
+        public void Mostrar()
+        {
+            _oculta = false;
+        }
+
         public override string ToString()
         {
-            return $"{Valor} de {Pinta}";
+            if (EstaOculta)
+                return "XX";
+            else
+                return $"{Valor} de {Pinta}";
         }
     }
 

@@ -22,6 +22,14 @@ namespace BlackJack.Modelo
 
         }
 
+        public void InicializarMano(List<Carta> cartas)
+        {
+            foreach(Carta carta in cartas)
+            {
+                Mano.AgregarCarta(carta);
+            }
+        }
+
         public void RecibirCarta(Carta carta)
         {
             Mano.AgregarCarta(carta);

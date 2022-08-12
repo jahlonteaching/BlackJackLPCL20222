@@ -21,6 +21,14 @@ namespace BlackJack.Modelo
             Baraja = new Baraja();
         }
 
+        public void InicializarMano(List<Carta> cartas)
+        {
+            foreach (Carta carta in cartas)
+            {
+                Mano.AgregarCarta(carta);
+            }
+        }
+
         public Carta RepartirCarta()
         {
             return Baraja.Repartir();
@@ -29,6 +37,11 @@ namespace BlackJack.Modelo
         public void RecibirCarta(Carta carta)
         {
             Mano.AgregarCarta(carta);
+        }
+
+        public void Barajar()
+        {
+            Baraja.Revolver();
         }
     }
 }
